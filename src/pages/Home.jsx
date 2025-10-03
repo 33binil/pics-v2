@@ -80,13 +80,13 @@ export default function Home() {
           <div className="relative w-full mt-28 md:mt-10">
             {/* Pixel Junkie flush left */}
             <div className="relative left-0 md:-left-32 top-0 text-center justify-center">
-              <h2 className="leading-none font-dela text-[52px] md:text-[200px] text-white">Pixel Junkie</h2>
+              <h2 className="leading-none font-dela text-[52px] md:text-[200px] text-white glass-text-shadow">Pixel Junkie</h2>
             </div>
 
             {/* Creative Studio flush right */}
             <div className="relative flex flex-col md:flex-row items-center justify-center text-white gap-6 px-4 py-0 md:py-8">
               {/* h2 first on mobile, second on desktop */}
-              <h2 className="order-1 md:order-2 font-dela whitespace-nowrap text-[38px] md:text-[150px] max-w-[90vw] md:max-w-none leading-none">
+              <h2 className="order-1 md:order-2 font-dela whitespace-nowrap text-[38px] md:text-[150px] max-w-[90vw] md:max-w-none leading-none glass-text-shadow">
                 Creative Studio
               </h2>
               {/* h1 second on mobile, first on desktop */}
