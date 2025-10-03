@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Font helpers (Google Fonts loaded in index.html) */
+:root{
+	--font-dela: 'Dela Gothic One', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	--font-alata: 'Alata', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	--font-big-shoulders: 'Big Shoulders Display', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+.font-dela { font-family: var(--font-dela); }
+.font-alata { font-family: var(--font-alata); }
+.font-big-shoulders { font-family: var(--font-big-shoulders); }
+
+
+/* Glassmorphism utility for headings or small panels */
+.glass {
+	background: rgba(255, 255, 255, 0.08); /* light frosted background */
+	-webkit-backdrop-filter: blur(8px);
+	backdrop-filter: blur(8px);
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+	padding: 0.25rem 0.5rem;
+	border-radius: 8px;
+	display: inline-block;
+}
+
+/* Glass-like effect applied to text (no box or border) */
+.glass-text {
+	/* semi-translucent fill */
+	color: rgba(255, 255, 255, 0.95);
+	/* layered shadows to emulate frosted / glassy letters */
+	text-shadow:
+			0 1px 0 rgba(255,255,255,0.28), /* slight top sheen */
+			0 4px 8px rgba(0,0,0,0.45),     /* soft drop shadow */
+			0 0 3px rgba(255,255,255,0.06);  /* small glow (approx 30% blur feel) */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	/* faint stroke for crisp edges */
+	-webkit-text-stroke: 0.5px rgba(255,255,255,0.08);
+}
+
+/* Stronger variant for very large display headings */
+.glass-text--display {
+	color: rgba(255,255,255,0.98);
+	/* stronger layered shadows for large display headings */
+	text-shadow:
+			0 2px 0 rgba(255,255,255,0.28),
+			0 10px 24px rgba(0,0,0,0.55),
+			0 0 4px rgba(255,255,255,0.08);
+	-webkit-text-stroke: 0.7px rgba(255,255,255,0.10);
+}

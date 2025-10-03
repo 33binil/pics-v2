@@ -1,0 +1,43 @@
+.bg-slideshow {
+  position: fixed;
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
+  overflow: hidden;
+  pointer-events: none; /* background only */
+}
+
+.bg-image {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transform: translateY(0);
+}
+
+.bg-image.base {
+  transition: opacity 0.3s ease-out;
+}
+
+/* entering animation: from -120vh to 0 (0.5s) */
+@keyframes dropIn {
+  0% {
+    transform: translateY(-120vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.bg-image.entering {
+  animation: dropIn 0.5s ease-out forwards;
+}
+
+/* Ensure the entering image is always above the base */
+.bg-image.base { z-index: 1 }
+.bg-image.entering { z-index: 2 }
+
+/* Performance: use will-change when animating */
+.bg-image.entering { will-change: transform }
+
+/* Mobile-specific adjustments if needed */
+
