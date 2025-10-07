@@ -47,7 +47,7 @@ export default function App() {
   return (
     <div className="relative">
       {/* Scrollable content area - increased height for scroll animations */}
-      <div className="min-h-[500vh]">
+      <div className="min-h-[400vh]">
         <Home showElements={showHomeElements} />
       </div>
 
