@@ -17,19 +17,19 @@ const About = ({ showAbout = false }) => {
             const documentHeight = document.documentElement.scrollHeight
             
             // Calculate scroll progress after About section appears
-            const aboutStartScroll = documentHeight * 0.38
+            const aboutStartScroll = documentHeight * 0.35 // Start About section earlier
             const scrollAfterAbout = scrollY - aboutStartScroll
-            const maxScrollAfterAbout = documentHeight * 0.42 // Additional scroll range for animations
+            const maxScrollAfterAbout = documentHeight * 0.50 // Extended scroll range for longer video visibility
             
             if (scrollAfterAbout > windowHeight * 0.5) {
                 const progress = Math.min((scrollAfterAbout - windowHeight * 0.5) / (maxScrollAfterAbout - windowHeight * 0.5), 1)
                 
-                // First 60% of additional scroll: expand black box
-                if (progress <= 0.6) {
-                    setBlackBoxExpanded(progress > 0.1)
+                // First 75% of additional scroll: expand black box (longer video time)
+                if (progress <= 0.75) {
+                    setBlackBoxExpanded(progress > 0.05) // Expand almost immediately (5% instead of 10%)
                     setAboutPosition(0)
-                } 
-                // Keep black box expanded, don't hide About section
+                }
+                // Keep black box expanded for remaining 25%, don't hide About section
                 else {
                     setBlackBoxExpanded(true)
                     setAboutPosition(0) // Keep About visible, don't move down
